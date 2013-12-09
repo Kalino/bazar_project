@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+
+        <title>{block title|striptags|upper}Domovská stránka{/block}</title>
+
+        <link rel="stylesheet" media="all" href="{$basePath}/css/styles.css">
+        <link rel="stylesheet" media="screen and (max-width: 1024px)" href="{$basePath}/css/small_styles.css">
+        <link rel="shortcut icon" href="{$basePath}/favicon.ico">
+        {block head}{/block}
+    </head>
+
+    <body>
+        <div id="nav"></div>
+        <div id="container">
+            <nav>
+                <a n:href="Homepage:default" id="id_logo"><img src="{$basePath}/images/logo.png"></a>
+                <div id="id_ref" onclick="ShowLoginDiv();">Prihlásenie</div>
+                <a n:href="Homepage:default">Link</a>
+                <a n:href="Homepage:default">Link</a>
+                <a n:href="Homepage:default" >Link</a>
+                <div id="id_login">
+                    
+                    <div id="login_top">Prihlásenie</div>
+
+                        {control newLoginForm}
+
+                </div>
+            </nav>
+
+            <section>
+
+
+                {block content}
+                {/block}
+
+            </section>
+
+            <footer>
+                <hr>
+                Stránka je vytvorená za účelom projektu <br>
+                Copyright 2013 &copy;
+            </footer>
+
+            {block scripts}
+            {/block}
+        </div>
+        <script src="{$basePath}/js/jquery.js"></script>
+        <script src="{$basePath}/js/nette.ajax.js"></script>
+        <script src="{$basePath}/js/JavaScript.js"></script>
+        <script src="{$basePath}/js/ajax.js"></script>
+        
+    </body>
+</html>

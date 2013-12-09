@@ -1,0 +1,62 @@
+#nav{
+   display: none;
+}
+
+#container{
+    width: 100%;
+}
+
+nav{
+    width: 100%;
+    position: relative;
+}
+
+nav a, nav #id_ref{
+    width: 12%;
+}
+
+#id_login{ 
+    position: absolute;
+    right: 150px;
+}
+
+section{
+    padding-top: 5%;
+}
+
+#left_panel{
+    width: 100%;
+}
+
+#right_panel{
+    display: none;
+}
+
+#id_baseform{
+    width: 100%;
+}
+
+.car_info{
+    width: 95%;
+    margin-left: 2%;
+}
+
+.car_info div{
+    width: 75%;
+}
+
+.center{
+    width: 98%;
+}
+
+#show_normal{
+    height: 20px;
+}
+
+footer hr{
+    width: 100%;
+}
+
+
+
+

@@ -1,0 +1,33 @@
+{* HOMEPAGE *}
+{block content}
+<div id="left_panel">
+
+    <div class="center">
+        <a n:href="classic">
+            <div id="show_normal">
+                Klasický formulár
+            </div>
+        </a>
+    </div>
+
+    {foreach $pole as $item}
+        <a href="?id={$item->ID}">
+            <div class="small_block">
+                <div>
+                    {$item->name}
+                </div>
+                <img src="{$basePath}/images/logos/{$item->src}" alt="{$item->name}">
+            </div>
+        </a>
+    {/foreach}
+</div>
+
+<div id="right_panel">
+    {control topCars}
+</div>
+{/block}
+
+
+
+
+
