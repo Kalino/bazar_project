@@ -1,37 +1,37 @@
-<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.06904800 1386613123";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte";i:2;i:1386613122;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.65395800 1386623813";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte";i:2;i:1386623812;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '4q52u31cq8')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'yfceauu151')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbedb16ee0a0_title')) { function _lbedb16ee0a0_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb8f1eb67f6c_title')) { function _lb8f1eb67f6c_title($_l, $_args) { extract($_args)
 ?>Domovská stránka<?php
 }}
 
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lbcc4ba58eb9_head')) { function _lbcc4ba58eb9_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lb001afe7426_head')) { function _lb001afe7426_head($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbb51d55f294_content')) { function _lbb51d55f294_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb647d8e0135_content')) { function _lb647d8e0135_content($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lbb6250407a6_scripts')) { function _lbb6250407a6_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb365d4cc71f_scripts')) { function _lb365d4cc71f_scripts($_l, $_args) { extract($_args)
 ;
 }}
 
@@ -83,8 +83,8 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
 ">Link</a>
                 <a href="<?php echo htmlSpecialChars($_control->link("Homepage:default")) ?>
 ">Link</a>
-                <a  href="<?php echo htmlSpecialChars($_control->link("Homepage:default")) ?>
-">Link</a>
+                <a href="<?php echo htmlSpecialChars($_control->link("About:")) ?>
+">About</a>
                 <div id="id_login">
                     
                     <div id="login_top">Prihlásenie</div>

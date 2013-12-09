@@ -41,6 +41,7 @@ section{
     width: 95%;
     margin-left: 2%;
     height: 20%;
+    overflow: auto;
 }
 
 .car_info_content{
