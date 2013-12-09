@@ -1,37 +1,37 @@
-<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.53348700 1386583496";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte";i:2;i:1386583494;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.06904800 1386613123";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte";i:2;i:1386613122;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'afwhpdp6zu')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '4q52u31cq8')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb8e3bd6da32_title')) { function _lb8e3bd6da32_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbedb16ee0a0_title')) { function _lbedb16ee0a0_title($_l, $_args) { extract($_args)
 ?>Domovská stránka<?php
 }}
 
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lbbf423c7ab2_head')) { function _lbbf423c7ab2_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lbcc4ba58eb9_head')) { function _lbcc4ba58eb9_head($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbe0c3b3031f_content')) { function _lbe0c3b3031f_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbb51d55f294_content')) { function _lbb51d55f294_content($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb01cd5a2865_scripts')) { function _lb01cd5a2865_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lbb6250407a6_scripts')) { function _lbb6250407a6_scripts($_l, $_args) { extract($_args)
 ;
 }}
 
@@ -60,11 +60,11 @@ if ($_l->extends) {
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content="" />
-        <meta name="viewport" content="initial-style:1" />
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
 
         <title><?php if ($_l->extends) { ob_end_clean(); return Nette\Latte\Macros\CoreMacros::includeTemplate($_l->extends, get_defined_vars(), $template)->render(); }
 ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars()); echo $template->upper($template->striptags(ob_get_clean()))  ?></title>
-
+        
         <link rel="stylesheet" media="all" href="<?php echo htmlSpecialChars($basePath) ?>/css/styles.css" />
         <link rel="stylesheet" media="screen and (max-width: 1024px)" href="<?php echo htmlSpecialChars($basePath) ?>/css/small_styles.css" />
         <link rel="shortcut icon" href="<?php echo htmlSpecialChars($basePath) ?>/favicon.ico" />

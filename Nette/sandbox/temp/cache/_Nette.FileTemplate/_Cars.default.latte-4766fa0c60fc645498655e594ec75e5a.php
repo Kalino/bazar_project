@@ -1,43 +1,60 @@
-<?php //netteCache[01]000389a:2:{s:4:"time";s:21:"0.03502400 1386374274";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:67:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\Cars\default.latte";i:2;i:1386374270;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000389a:2:{s:4:"time";s:21:"0.89071500 1386614816";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:67:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\Cars\default.latte";i:2;i:1386614815;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\wamp2\www\projekt\Nette\sandbox\app\templates\Cars\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'yl5omvyicm')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'ljaa0igfeq')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb5cbbaa50c8_content')) { function _lb5cbbaa50c8_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb238c523741_content')) { function _lb238c523741_content($_l, $_args) { extract($_args)
 ?><div id="left_panel">
+    
     <div class="car_info">
-        <div>
-            Tu je obsah Idflfglsdnfksnflndsfndsuifhewjkfs ahfdsjkf kj sdfdkj fsdfjoid fsjf ds
-        </div>
+        <div class="car_info_title">BMW rad 3</div>
+        <div class="car_info_image">
         <img src="<?php echo htmlSpecialChars($basePath) ?>/images/cars/bmw_3.jpg" alt="car_image" />
+        </div>
+        <div class="car_info_content">
+           r.v.2005, 218PS, 4.0 benzín, automatická prevodovka, 8xAirbag, ABS, EPS, dažďový senzor a iny obsah o aute tu budeee a potom a teda
+        </div>
+        <span>Cena: 7999 &euro;</span>
     </div>
 
     <div class="car_info">
-        <div>
-            Tu je obsah Idflfglsdnfksnflndsfndsuifhewjkfs ahfdsjkf kj sdfdkj fsdfjoid fsjf ds
-        </div>
+        <div class="car_info_title">BMW rad 3</div>
+        <div class="car_info_image">
         <img src="<?php echo htmlSpecialChars($basePath) ?>/images/cars/bmw_3.jpg" alt="car_image" />
+        </div>
+        <div class="car_info_content">
+           r.v.2005, 218PS, 4.0 benzín, automatická prevodovka, 8xAirbag, ABS, EPS, dažďový senzor a iny obsah o aute tu budeee a potom a teda
+        </div>
+        <span>Cena: 7999 &euro;</span>
+    </div>
+    
+   <div class="car_info">
+        <div class="car_info_title">BMW rad 3</div>
+        <div class="car_info_image">
+        <img src="<?php echo htmlSpecialChars($basePath) ?>/images/cars/bmw_3.jpg" alt="car_image" />
+        </div>
+        <div class="car_info_content">
+           r.v.2005, 218PS, 4.0 benzín, automatická prevodovka, 8xAirbag, ABS, EPS, dažďový senzor a iny obsah o aute tu budeee a potom a teda
+        </div>
+        <span>Cena: 7999 &euro;</span>
     </div>
     
     <div class="car_info">
-        <div>
-            Tu je obsah Idflfglsdnfksnflndsfndsuifhewjkfs ahfdsjkf kj sdfdkj fsdfjoid fsjf ds
-        </div>
+        <div class="car_info_title">BMW rad 3</div>
+        <div class="car_info_image">
         <img src="<?php echo htmlSpecialChars($basePath) ?>/images/cars/bmw_3.jpg" alt="car_image" />
-    </div>
-
-    <div class="car_info">
-        <div>
-            Tu je obsah Idflfglsdnfksnflndsfndsuifhewjkfs ahfdsjkf kj sdfdkj fsdfjoid fsjf ds
         </div>
-        <img src="<?php echo htmlSpecialChars($basePath) ?>/images/cars/bmw_3.jpg" alt="car_image" />
+        <div class="car_info_content">
+           r.v.2005, 218PS, 4.0 benzín, automatická prevodovka, 8xAirbag, ABS, EPS, dažďový senzor a iny obsah o aute tu budeee a potom a teda
+        </div>
+        <span>Cena: 7999 &euro;</span>
     </div>
 </div>
 

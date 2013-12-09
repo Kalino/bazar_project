@@ -4,6 +4,7 @@
 
 #container{
     width: 100%;
+    min-width: 320px;
 }
 
 nav{
@@ -39,10 +40,20 @@ section{
 .car_info{
     width: 95%;
     margin-left: 2%;
+    height: 20%;
 }
 
-.car_info div{
+.car_info_content{
     width: 75%;
+}
+
+.car_info span{
+    clear: left;
+}
+
+.car_info_image{
+    max-width: 15%;
+    max-height: 90%;
 }
 
 .center{

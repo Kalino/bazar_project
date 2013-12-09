@@ -13,7 +13,7 @@ body {
     position: fixed;
     margin: 0;
     padding: 0;
-    z-index: -1;
+    z-index: 0;
     background-color:#444444;
     border-top: rgb(220,220,220) solid thin;
     border-bottom: rgb(220,220,220) solid thin;
@@ -35,6 +35,7 @@ nav{
     line-height: 50px;
     border-top: rgb(220,220,220) solid thin;
     border-bottom: rgb(220,220,220) solid thin;
+    z-index: 9999;
     /*box-shadow: inset 0px 1px 1px 1px rgb(220,220,220);*/
     /*box-shadow: inset 0px -1px 0px 0px rgb(220,220,220);*/
 }
@@ -122,9 +123,10 @@ select:focus, input:focus:not([type="submit"]){
     line-height: 25px;
     display: none;
     border: #444444 solid thin;
-    background-color: rgba(245,245,245, 0.5);
+    background-color: rgba(245,245,245, 0.4);
     border-radius: 5px;
     box-shadow: inset 0 0 5px 1px rgb(220,220,220);
+    transition: background-color 300ms linear;
 }
 
 #id_login:hover{
@@ -168,7 +170,6 @@ section{
 .right_top{
     width: 290px;
     height: 210px;
-    /*border: #444444 solid thin;*/
     background-image: url('../images/gradient.png');
     background-repeat: repeat-x;
     background-color: #ffffff;
@@ -177,10 +178,23 @@ section{
     margin-bottom: 5px;
 }
 
+.right_top div{
+    position: relative;
+}
+
 .right_top p{
     padding: 10px;
     padding-top: 20px;
     text-align: left;
+}
+
+.right_top span{
+    position: absolute;
+    right: 5px;
+    bottom: -5px;
+    color: red;
+    font-size: 16px;
+    font-style: italic;
 }
 
 .right_top img{
@@ -211,7 +225,7 @@ th{
 
 .top{
     text-align: center;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 15px;
     display: block;
     width: 100%;
@@ -226,17 +240,18 @@ th{
 
 #login_top{
     text-align: center;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 15px;
     display: block;
     width: 100%;
     height: 35px;
     line-height: 35px;
-    background-color: rgba(204,204,204,0.5);
+    background-color: rgba(204,204,204,0.4);
     margin-bottom: 10px;
     color: black;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+    transition: background-color 300ms linear;
 }
 
 #login_top:hover{
@@ -246,9 +261,6 @@ th{
 .car_info{
     width: 630px;
     height: 130px;
-    /*border: #444444 solid thin;
-    background-color: rgb(245,245,245);
-    box-shadow: inset 0 0 5px 1px rgb(220,220,220);*/
     margin-bottom: 20px;
     display: block;
     color: black;
@@ -257,6 +269,7 @@ th{
     padding: 5px;
     border: transparent solid thin;
     box-shadow: 0 0 1px 1px transparent;
+    overflow: auto;
 }
 
 .car_info:hover{
@@ -264,18 +277,41 @@ th{
     box-shadow: 0 0 1px 1px #006AEB;
 }
 
-.car_info div{
-    display: block;
-    width: 480px;
+.car_info_title{
     float: left;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 5px;
+}
+
+.car_info_content{
+    display: block;
+    width: 450px;
+    float: left;
+    clear: left;
     padding: 5px;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.car_info span{
+    color: red;
+    font-size: 16px;
+    font-style: italic;
+    float: right;
+    margin-right: 10px;
+}
+
+.car_info_image{
+    float: right;
+    margin: 10px;
+    width: 110px;
+    height: 110px;
 }
 
 .car_info img{
-    max-width: 115px;
-    max-height: 115px;
-    float: right;
-    margin: 5px;
+    max-width: 110px;
+    max-height: 110px;
 }
 
 .small_block{

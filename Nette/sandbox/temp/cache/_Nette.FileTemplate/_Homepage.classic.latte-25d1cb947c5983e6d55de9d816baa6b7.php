@@ -1,19 +1,19 @@
-<?php //netteCache[01]000393a:2:{s:4:"time";s:21:"0.44541100 1386579364";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:71:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\Homepage\classic.latte";i:2;i:1386579363;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000393a:2:{s:4:"time";s:21:"0.35706000 1386613216";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:71:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\Homepage\classic.latte";i:2;i:1386613215;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\wamp2\www\projekt\Nette\sandbox\app\templates\Homepage\classic.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '4y8gdkbnwp')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'xsr265i0qt')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbb022630a51_content')) { function _lbb022630a51_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbe541bff194_content')) { function _lbe541bff194_content($_l, $_args) { extract($_args)
 ?><div id="left_panel">
     <div id="id_baseform">
-        <div class="top">Moj dlsi nadpis</div>
+        <div class="top">Formulár na vyhľadávanie</div>
 <div id="<?php echo $_control->getSnippetId('form') ?>"><?php call_user_func(reset($_l->blocks['_form']), $_l, $template->getParameters()) ?>
 </div>    </div>
 </div>
@@ -27,7 +27,7 @@ if (!function_exists($_l->blocks['content'][] = '_lbb022630a51_content')) { func
 //
 // block _form
 //
-if (!function_exists($_l->blocks['_form'][] = '_lb13865cc14e__form')) { function _lb13865cc14e__form($_l, $_args) { extract($_args); $_control->validateControl('form')
+if (!function_exists($_l->blocks['_form'][] = '_lb2315b64856__form')) { function _lb2315b64856__form($_l, $_args) { extract($_args); $_control->validateControl('form')
 ?>            <fieldset id="teraz">
 <?php $_ctrl = $_control->getComponent("newSearchForm"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ?>
             </fieldset>

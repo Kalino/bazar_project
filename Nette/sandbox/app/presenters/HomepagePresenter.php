@@ -30,7 +30,6 @@ class HomepagePresenter extends BasePresenter {
     }
 
     protected function createComponentTopCars() {
-
         return new Todo\TopCarsControl();
     }
 
