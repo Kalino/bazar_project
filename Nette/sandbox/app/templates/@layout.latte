@@ -6,9 +6,10 @@
         <meta name="viewport" content="width=device-width, user-scalable=no">
 
         <title>{block title|striptags|upper}Domovská stránka{/block}</title>
-        
+
         <link rel="stylesheet" media="all" href="{$basePath}/css/styles.css">
         <link rel="stylesheet" media="screen and (max-width: 1024px)" href="{$basePath}/css/small_styles.css">
+        <link rel="stylesheet" media="screen and (max-width: 720px)" href="{$basePath}/css/very_small_styles.css">
         <link rel="shortcut icon" href="{$basePath}/favicon.ico">
         {block head}{/block}
     </head>
@@ -17,21 +18,31 @@
         <div id="nav"></div>
         <div id="container">
             <nav>
-                <a n:href="Homepage:default" id="id_logo"><img src="{$basePath}/images/logo.png"></a>
-                <div id="id_ref" onclick="ShowLoginDiv();">Prihlásenie</div>
-                <a n:href="Homepage:default">Link</a>
-                <a n:href="Homepage:default">Link</a>
-                <a n:href="About:">About</a>
-                <div id="id_login">
-                    
-                    <div id="login_top">Prihlásenie</div>
-
+                <a n:href="Homepage:default" id="id_logo"><img src="{$basePath}/images/logo.png" alt="logo"></a>
+                <div id="normal_menu">
+                    <div id="id_ref" onclick="ShowLoginDiv();">Prihlásenie</div>
+                    <a n:href="Homepage:default">Link</a>
+                    <a n:href="Homepage:default">Link</a>
+                    <a n:href="About:">About</a>
+                    <div id="id_login">
+                        <div id="login_top">Prihlásenie</div>
                         {control newLoginForm}
-
+                    </div>
                 </div>
+                <div id="show_small_menu" onclick="ShowSmallMenu();">Menu</div>
             </nav>
 
+
             <section>
+                <div id="small_menu">
+                    <div id="small_menu_bt" onclick="ShowLoginDivSmall();">Prihlásenie</div>
+                    <div id="id_login_small">
+                        {control newLoginForm}
+                    </div>
+                    <a n:href="Homepage:default">Link</a>
+                    <a n:href="Homepage:default">Link</a>
+                    <a n:href="About:">About</a>
+                </div>
 
 
                 {block content}
@@ -52,6 +63,6 @@
         <script src="{$basePath}/js/nette.ajax.js"></script>
         <script src="{$basePath}/js/JavaScript.js"></script>
         <script src="{$basePath}/js/ajax.js"></script>
-        
+
     </body>
 </html>

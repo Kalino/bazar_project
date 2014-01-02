@@ -1,37 +1,37 @@
-<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.65395800 1386623813";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte";i:2;i:1386623812;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.54889800 1386892156";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte";i:2;i:1386892155;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'yfceauu151')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '8wivocf2dw')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb8f1eb67f6c_title')) { function _lb8f1eb67f6c_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbef6b3c7b88_title')) { function _lbef6b3c7b88_title($_l, $_args) { extract($_args)
 ?>Domovská stránka<?php
 }}
 
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lb001afe7426_head')) { function _lb001afe7426_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lb873754f2d5_head')) { function _lb873754f2d5_head($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb647d8e0135_content')) { function _lb647d8e0135_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb975a33a935_content')) { function _lb975a33a935_content($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb365d4cc71f_scripts')) { function _lb365d4cc71f_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lbd7498ce2f4_scripts')) { function _lbd7498ce2f4_scripts($_l, $_args) { extract($_args)
 ;
 }}
 
@@ -64,9 +64,10 @@ if ($_l->extends) {
 
         <title><?php if ($_l->extends) { ob_end_clean(); return Nette\Latte\Macros\CoreMacros::includeTemplate($_l->extends, get_defined_vars(), $template)->render(); }
 ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars()); echo $template->upper($template->striptags(ob_get_clean()))  ?></title>
-        
+
         <link rel="stylesheet" media="all" href="<?php echo htmlSpecialChars($basePath) ?>/css/styles.css" />
         <link rel="stylesheet" media="screen and (max-width: 1024px)" href="<?php echo htmlSpecialChars($basePath) ?>/css/small_styles.css" />
+        <link rel="stylesheet" media="screen and (max-width: 720px)" href="<?php echo htmlSpecialChars($basePath) ?>/css/very_small_styles.css" />
         <link rel="shortcut icon" href="<?php echo htmlSpecialChars($basePath) ?>/favicon.ico" />
         <?php call_user_func(reset($_l->blocks['head']), $_l, get_defined_vars())  ?>
 
@@ -77,24 +78,37 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
         <div id="container">
             <nav>
                 <a id="id_logo" href="<?php echo htmlSpecialChars($_control->link("Homepage:default")) ?>
-"><img src="<?php echo htmlSpecialChars($basePath) ?>/images/logo.png" /></a>
-                <div id="id_ref" onclick="ShowLoginDiv();">Prihlásenie</div>
-                <a href="<?php echo htmlSpecialChars($_control->link("Homepage:default")) ?>
+"><img src="<?php echo htmlSpecialChars($basePath) ?>/images/logo.png" alt="logo" /></a>
+                <div id="normal_menu">
+                    <div id="id_ref" onclick="ShowLoginDiv();">Prihlásenie</div>
+                    <a href="<?php echo htmlSpecialChars($_control->link("Homepage:default")) ?>
 ">Link</a>
-                <a href="<?php echo htmlSpecialChars($_control->link("Homepage:default")) ?>
+                    <a href="<?php echo htmlSpecialChars($_control->link("Homepage:default")) ?>
 ">Link</a>
-                <a href="<?php echo htmlSpecialChars($_control->link("About:")) ?>
+                    <a href="<?php echo htmlSpecialChars($_control->link("About:")) ?>
 ">About</a>
-                <div id="id_login">
-                    
-                    <div id="login_top">Prihlásenie</div>
-
+                    <div id="id_login">
+                        <div id="login_top">Prihlásenie</div>
 <?php $_ctrl = $_control->getComponent("newLoginForm"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ?>
-
+                    </div>
                 </div>
+                <div id="show_small_menu" onclick="ShowSmallMenu();">Menu</div>
             </nav>
 
+
             <section>
+                <div id="small_menu">
+                    <div id="small_menu_bt" onclick="ShowLoginDivSmall();">Prihlásenie</div>
+                    <div id="id_login_small">
+<?php $_ctrl = $_control->getComponent("newLoginForm"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ?>
+                    </div>
+                    <a href="<?php echo htmlSpecialChars($_control->link("Homepage:default")) ?>
+">Link</a>
+                    <a href="<?php echo htmlSpecialChars($_control->link("Homepage:default")) ?>
+">Link</a>
+                    <a href="<?php echo htmlSpecialChars($_control->link("About:")) ?>
+">About</a>
+                </div>
 
 
 <?php call_user_func(reset($_l->blocks['content']), $_l, get_defined_vars())  ?>
@@ -113,6 +127,6 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
         <script src="<?php echo htmlSpecialChars($basePath) ?>/js/nette.ajax.js"></script>
         <script src="<?php echo htmlSpecialChars($basePath) ?>/js/JavaScript.js"></script>
         <script src="<?php echo htmlSpecialChars($basePath) ?>/js/ajax.js"></script>
-        
+
     </body>
 </html>

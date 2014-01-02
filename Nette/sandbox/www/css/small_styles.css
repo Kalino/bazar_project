@@ -1,5 +1,5 @@
 #nav{
-   display: none;
+    display: none;
 }
 
 #container{
@@ -13,12 +13,15 @@ nav{
 }
 
 nav a, nav #id_ref{
-    width: 12%;
+    width: 115px;
+}
+
+#id_logo{
+    width: 113px;
 }
 
 #id_login{ 
-    position: absolute;
-    right: 150px;
+    left: 67%;
 }
 
 section{
@@ -63,6 +66,22 @@ section{
 
 #show_normal{
     height: 20px;
+}
+
+#show_small_menu{
+    display: none;
+}
+
+#small_menu{
+    display: none;
+}
+
+#small_menu a, #small_menu_bt{
+    display: none;
+}
+
+#id_login_small{
+    display: none;
 }
 
 footer hr{

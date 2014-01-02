@@ -1,0 +1,120 @@
+#normal_menu{
+    display: none;
+}
+
+#left_panel{
+    margin-top: 0px;
+}
+
+nav{
+    margin-bottom: 0px;
+}
+
+section{
+    padding-top: 5px;
+}
+
+#show_small_menu{
+    display: block;
+    float: right;
+    padding: 0;
+    margin: 0;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    z-index: 10;
+    cursor: pointer; 
+    border-left: #dcdcdc solid thin;
+    font-size: 19px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #dcdcdc;
+    background-image: url('../images/gear.png');
+    background-repeat: no-repeat;
+    background-position: 65px 15px;
+}
+
+#show_small_menu:hover{
+    background-image: url('../images/gear_black.png');
+    background-color: #AAAAAA;
+    color: black;
+}
+
+#show_small_menu img{
+   /* margin-right: 20px; */
+}
+
+#small_menu{
+    display: none;
+    position: absolute;
+    width: 70%;
+    margin-left: 15%;
+}
+
+#small_menu_bt{
+    cursor: pointer;
+}
+
+#small_menu a, #small_menu_bt{
+    display: block;
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 100;
+    line-height: 70px;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.7);
+    border-bottom: #dcdcdc solid thin;
+    transition: background-color 300ms linear;
+}
+
+#small_menu a:hover, #small_menu_bt:hover{
+    background-color: rgba(0,0,0,0.9);
+    transition: background-color 350ms linear;
+}
+
+#id_login_small{
+    color: #ffffff;
+    display: block;
+    padding: 0;
+    background-color: rgba(0,0,0,0.7);
+    border-bottom: #dcdcdc solid thin;
+    width: 100%;
+    font-size: 19px;
+    display: none;
+}
+
+#id_login_small table{
+    width: 100%;
+    height: 200px;
+}
+
+#id_login_small label{
+    padding-left: 20px;
+}
+
+#id_login_small:hover{
+    background-color: rgba(0,0,0,0.9);
+}
+
+#id_login_small input{
+    height: 35px;
+    width: 75%;
+}
+
+#id_login_small input[type="submit"]{
+    background-color: rgba(0,0,0,0.7);
+    width: 80%;
+}
+
+#id_login_small input[type="submit"]:hover{
+    color: #000000;
+    background-color: rgba(255,255,255,0.8);
+}

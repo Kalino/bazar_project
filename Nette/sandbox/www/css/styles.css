@@ -53,7 +53,6 @@ nav a, nav #id_ref{
     color: #dcdcdc;
     line-height: 50px;
     z-index: 10;
-    //border: transparent solid thin;
 }
 
 #id_ref{
@@ -62,11 +61,8 @@ nav a, nav #id_ref{
 
 
 nav a:hover, nav #id_ref:hover{
-    padding: 0;
     background-color: #AAAAAA;
     color: black;
-    //border: #006AEB solid thin;
-    //box-shadow: 0 0 1px 1px #006AEB;
 }
 
 input, select{
@@ -176,7 +172,7 @@ section{
     background-color: #ffffff;
     border-radius: 5px;
     box-shadow: inset 0 0 5px 1px rgb(220,220,220);
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .right_top div{
@@ -338,14 +334,14 @@ th{
 
 .small_block div{
     float: left;
-    width: 110px;
+    max-width: 95px;
     margin: 5px;
 }
 
 .small_block img{
     float: right;
-    height: 50px;
-    width: 50px;
+    max-height: 48px;
+    max-width: 70px;
 }
 
 .center{
@@ -376,7 +372,21 @@ th{
     font-weight: 700;
 }
 
+#show_small_menu{
+    display: none;
+}
 
+#small_menu{
+    display: none;
+}
+
+#small_menu a, #small_menu_bt{
+    display: none;
+}
+
+#id_login_small{
+    display: none;
+}
 
 footer hr{
     width: 480px;
@@ -392,7 +402,8 @@ footer{
     text-align: center;
     font-size: 12px;
     color: rgb(200,200,200);
-    margin-top: 30px;
+    padding-top: 20px;
+    padding-bottom: 10px;
     clear: both;
 }
 
