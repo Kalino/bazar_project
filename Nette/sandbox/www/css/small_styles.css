@@ -64,6 +64,25 @@ section{
     width: 98%;
 }
 
+#car_data{
+    position: inherit;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#car_images{
+    position: inherit;
+    width: 50%;
+    margin-right: 25%;
+}
+
+#main_image{
+    clear: both;
+    width: 100%;
+}
+
 #show_normal{
     height: 20px;
 }

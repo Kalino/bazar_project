@@ -30,6 +30,8 @@ common:
 		router: @routerFactory::createRouter
 		
 		brandsRepository: Todo\BrandsRepository
+		detailRepository: Todo\DetailRepository
+		carsRepository: Todo\CarsRepository
 	factories:
 
 

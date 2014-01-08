@@ -1,68 +1,53 @@
-<?php //netteCache[01]000389a:2:{s:4:"time";s:21:"0.95600700 1386616150";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:67:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\Cars\default.latte";i:2;i:1386616145;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000389a:2:{s:4:"time";s:21:"0.59086800 1389125728";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:67:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\Cars\default.latte";i:2;i:1389125720;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\wamp2\www\projekt\Nette\sandbox\app\templates\Cars\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '8has1lqhsg')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '9cjibpzqwz')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb1453b5711c_title')) { function _lb1453b5711c_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb87c1cbfee2_title')) { function _lb87c1cbfee2_title($_l, $_args) { extract($_args)
 ?> Zoznam áut<?php
 }}
 
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbece55ffe80_content')) { function _lbece55ffe80_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbc97f191a1a_content')) { function _lbc97f191a1a_content($_l, $_args) { extract($_args)
 ?><div id="left_panel">
-    
-    <div class="car_info">
-        <div class="car_info_title">BMW rad 3</div>
-        <div class="car_info_image">
-        <img src="<?php echo htmlSpecialChars($basePath) ?>/images/cars/bmw_3.jpg" alt="car_image" />
-        </div>
-        <div class="car_info_content">
-           r.v.2005, 218PS, 4.0 benzín, automatická prevodovka, 8xAirbag, ABS, EPS, dažďový senzor a iny obsah o aute tu budeee a potom a teda
-        </div>
-        <span>Cena: 7999 &euro;</span>
-    </div>
 
-    <div class="car_info">
-        <div class="car_info_title">BMW rad 3</div>
-        <div class="car_info_image">
-        <img src="<?php echo htmlSpecialChars($basePath) ?>/images/cars/bmw_3.jpg" alt="car_image" />
-        </div>
-        <div class="car_info_content">
-           r.v.2005, 218PS, 4.0 benzín, automatická prevodovka, 8xAirbag, ABS, EPS, dažďový senzor a iny obsah o aute tu budeee a potom a teda
-        </div>
-        <span>Cena: 7999 &euro;</span>
-    </div>
+<?php $iterations = 0; foreach ($cars as $item): ?>
+        <a href="<?php echo htmlSpecialChars($basePath) ?>/detail/show/<?php echo htmlSpecialChars($item->id) ?>" target="_blank">
+            <div class="car_info">
+                <div class="car_info_title"><?php echo Nette\Templating\Helpers::escapeHtml($znacky[$item->brand], ENT_NOQUOTES) ?>
+ <?php echo Nette\Templating\Helpers::escapeHtml($modely[$item->model], ENT_NOQUOTES) ?>
+ <?php echo Nette\Templating\Helpers::escapeHtml($item->name, ENT_NOQUOTES) ?>
+
+                    <div class="date"><?php echo Nette\Templating\Helpers::escapeHtml($template->date($item->create, '%d.%m.%Y'), ENT_NOQUOTES) ?></div>
+                </div>
+                <div class="car_info_image">
+                    <img src="<?php echo htmlSpecialChars($basePath) ?>/images/cars/<?php echo htmlSpecialChars($item->main_image) ?>" alt="car_image" />
+                </div>
+                <div class="car_info_content">
+                    
+                    <?php echo Nette\Templating\Helpers::escapeHtml($stringy[$item->region], ENT_NOQUOTES) ?>
+&nbsp;kraj, r.v.: <?php echo Nette\Templating\Helpers::escapeHtml($item->year, ENT_NOQUOTES) ?>
+, Objem motora: <?php echo Nette\Templating\Helpers::escapeHtml($item->capacity, ENT_NOQUOTES) ?>
+, <?php echo Nette\Templating\Helpers::escapeHtml($item->power, ENT_NOQUOTES) ?>
+&nbsp;kW, <?php echo Nette\Templating\Helpers::escapeHtml($stringy[$item->gas], ENT_NOQUOTES) ?>, 
+                    <?php echo Nette\Templating\Helpers::escapeHtml($item->kilometres, ENT_NOQUOTES) ?>
+&nbsp;km, <?php echo Nette\Templating\Helpers::escapeHtml($stringy[$item->gear], ENT_NOQUOTES) ?>&nbsp;prevodovka
+                </div>
+                <span>Cena: <?php echo Nette\Templating\Helpers::escapeHtml($item->price, ENT_NOQUOTES) ?>&euro;</span>
+            </div>
+        </a>
+<?php $iterations++; endforeach ?>
     
-   <div class="car_info">
-        <div class="car_info_title">BMW rad 3</div>
-        <div class="car_info_image">
-        <img src="<?php echo htmlSpecialChars($basePath) ?>/images/cars/bmw_3.jpg" alt="car_image" />
-        </div>
-        <div class="car_info_content">
-           r.v.2005, 218PS, 4.0 benzín, automatická prevodovka, 8xAirbag, ABS, EPS, dažďový senzor a iny obsah o aute tu budeee a potom a teda
-        </div>
-        <span>Cena: 7999 &euro;</span>
-    </div>
-    
-    <div class="car_info">
-        <div class="car_info_title">BMW rad 3</div>
-        <div class="car_info_image">
-        <img src="<?php echo htmlSpecialChars($basePath) ?>/images/cars/bmw_3.jpg" alt="car_image" />
-        </div>
-        <div class="car_info_content">
-           r.v.2005, 218PS, 4.0 benzín, automatická prevodovka, 8xAirbag, ABS, EPS, dažďový senzor a iny obsah o aute tu budeee a potom a teda
-        </div>
-        <span>Cena: 7999 &euro;</span>
-    </div>
+
 </div>
 
 <div id="right_panel">

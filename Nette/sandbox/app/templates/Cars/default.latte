@@ -2,50 +2,27 @@
 {block title} Zoznam áut {/block}
 {block content}
 <div id="left_panel">
-    
-    <div class="car_info">
-        <div class="car_info_title">BMW rad 3</div>
-        <div class="car_info_image">
-        <img src="{$basePath}/images/cars/bmw_3.jpg" alt="car_image">
-        </div>
-        <div class="car_info_content">
-           r.v.2005, 218PS, 4.0 benzín, automatická prevodovka, 8xAirbag, ABS, EPS, dažďový senzor a iny obsah o aute tu budeee a potom a teda
-        </div>
-        <span>Cena: 7999 &euro;</span>
-    </div>
 
-    <div class="car_info">
-        <div class="car_info_title">BMW rad 3</div>
-        <div class="car_info_image">
-        <img src="{$basePath}/images/cars/bmw_3.jpg" alt="car_image">
-        </div>
-        <div class="car_info_content">
-           r.v.2005, 218PS, 4.0 benzín, automatická prevodovka, 8xAirbag, ABS, EPS, dažďový senzor a iny obsah o aute tu budeee a potom a teda
-        </div>
-        <span>Cena: 7999 &euro;</span>
-    </div>
+    {foreach $cars as $item}
+        <a href="{$basePath}/detail/show/{$item->id}" target="_blank">
+            <div class="car_info">
+                <div class="car_info_title">{$znacky[$item->brand]} {$modely[$item->model]} {$item->name}
+                    <div class="date">{$item->create|date:'%d.%m.%Y'}</div>
+                </div>
+                <div class="car_info_image">
+                    <img src="{$basePath}/images/cars/{$item->main_image}" alt="car_image">
+                </div>
+                <div class="car_info_content">
+                    
+                    {$stringy[$item->region]}&nbsp;kraj, r.v.: {$item->year}, Objem motora: {$item->capacity}, {$item->power}&nbsp;kW, {$stringy[$item->gas]}, 
+                    {$item->kilometres}&nbsp;km, {$stringy[$item->gear]}&nbsp;prevodovka
+                </div>
+                <span>Cena: {$item->price}&euro;</span>
+            </div>
+        </a>
+    {/foreach}
     
-   <div class="car_info">
-        <div class="car_info_title">BMW rad 3</div>
-        <div class="car_info_image">
-        <img src="{$basePath}/images/cars/bmw_3.jpg" alt="car_image">
-        </div>
-        <div class="car_info_content">
-           r.v.2005, 218PS, 4.0 benzín, automatická prevodovka, 8xAirbag, ABS, EPS, dažďový senzor a iny obsah o aute tu budeee a potom a teda
-        </div>
-        <span>Cena: 7999 &euro;</span>
-    </div>
-    
-    <div class="car_info">
-        <div class="car_info_title">BMW rad 3</div>
-        <div class="car_info_image">
-        <img src="{$basePath}/images/cars/bmw_3.jpg" alt="car_image">
-        </div>
-        <div class="car_info_content">
-           r.v.2005, 218PS, 4.0 benzín, automatická prevodovka, 8xAirbag, ABS, EPS, dažďový senzor a iny obsah o aute tu budeee a potom a teda
-        </div>
-        <span>Cena: 7999 &euro;</span>
-    </div>
+
 </div>
 
 <div id="right_panel">

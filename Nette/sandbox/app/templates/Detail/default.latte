@@ -1,0 +1,51 @@
+{* DETAIL INZERATU *}
+{block title} Detail inzerátu {/block}
+{block content}
+<div id="car_data">
+    <h2>
+        {$pole['brand']} {$pole['model']}
+        {$pole['name']} 
+    </h2>
+        <div class="date">{$pole['create']|date:'%d.%m.%Y'}</div>
+    <hr>
+    <h3>Základné údaje</h3>
+    {$pole['region']} kraj, r.v.: {$pole['year']},
+    Objem motora: {$pole['capacity']}, {$pole['gas']},
+    {$pole['kilometres']}&nbsp;km, {$pole['gear']} prevodovka,
+    {$pole['power']}&nbsp;kW
+    <hr>
+    <h3>Bezpečnostné prvky</h3>
+    {foreach $data as $item}
+        {if $item->category == 0}
+            {$item->name}{if !$iterator->isLast()},{/if}
+        {/if}
+    {/foreach}
+    <hr>
+    <h3>Výbava</h3>
+    {foreach $data2 as $item}
+        {if $item->category == 1}
+            {$item->name}{if !$iterator->isLast()},{/if}
+        {/if}
+    {/foreach}
+    <hr>
+    <h3>Popis majiteľa</h3>
+    {$pole['about']}
+    <hr>
+    <h3>Kontakt</h3>
+    Telefónne číslo: {$pole['phone']}
+    <hr>
+    <p id="price">Cena: {$pole['price']}&euro;</p>
+</div>
+<div id="car_images">
+    <a href="{$basePath}/images/cars/{$pole['main_image']}" data-lightbox="images">
+        <img src="{$basePath}/images/cars/{$pole['main_image']}" alt="car" id="main_image"> 
+    </a>
+    <div id="other_images">
+        {foreach $image as $item}
+            <a href="{$basePath}/images/cars/{$item}" data-lightbox="images">
+                <img src="{$basePath}/images/cars/{$item}" alt="car" class="other_images"> 
+            </a>
+        {/foreach}
+    </div>
+</div>
+{/block}

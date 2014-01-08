@@ -1,7 +1,7 @@
 $(function () {
     $.nette.init();
     $("#frm-newSearchForm").animate({marginLeft:'150px'});
-    $(".small_block").slideDown(600); 
+    $(".small_block").slideDown(800); 
 });
 
 $('#{$control["newSearchForm"][$input]->htmlId}').on('change', function() {

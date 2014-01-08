@@ -1,37 +1,37 @@
-<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.54889800 1386892156";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte";i:2;i:1386892155;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.50056900 1388928893";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte";i:2;i:1388928891;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '8wivocf2dw')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 's2j28ce65s')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbef6b3c7b88_title')) { function _lbef6b3c7b88_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb73ff45be87_title')) { function _lb73ff45be87_title($_l, $_args) { extract($_args)
 ?>Domovská stránka<?php
 }}
 
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lb873754f2d5_head')) { function _lb873754f2d5_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lb12ef193eb3_head')) { function _lb12ef193eb3_head($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb975a33a935_content')) { function _lb975a33a935_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb3a43b3cf97_content')) { function _lb3a43b3cf97_content($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lbd7498ce2f4_scripts')) { function _lbd7498ce2f4_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb47ee9c883e_scripts')) { function _lb47ee9c883e_scripts($_l, $_args) { extract($_args)
 ;
 }}
 
@@ -68,7 +68,9 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
         <link rel="stylesheet" media="all" href="<?php echo htmlSpecialChars($basePath) ?>/css/styles.css" />
         <link rel="stylesheet" media="screen and (max-width: 1024px)" href="<?php echo htmlSpecialChars($basePath) ?>/css/small_styles.css" />
         <link rel="stylesheet" media="screen and (max-width: 720px)" href="<?php echo htmlSpecialChars($basePath) ?>/css/very_small_styles.css" />
+        <link rel="stylesheet" href="<?php echo htmlSpecialChars($basePath) ?>/lightbox/css/lightbox.css" />
         <link rel="shortcut icon" href="<?php echo htmlSpecialChars($basePath) ?>/favicon.ico" />
+        
         <?php call_user_func(reset($_l->blocks['head']), $_l, get_defined_vars())  ?>
 
     </head>
@@ -118,7 +120,7 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
             <footer>
                 <hr />
                 Stránka je vytvorená za účelom projektu <br />
-                Copyright 2013 &copy;
+                Copyright 2014 &copy;
             </footer>
 
 <?php call_user_func(reset($_l->blocks['scripts']), $_l, get_defined_vars())  ?>
@@ -127,6 +129,8 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
         <script src="<?php echo htmlSpecialChars($basePath) ?>/js/nette.ajax.js"></script>
         <script src="<?php echo htmlSpecialChars($basePath) ?>/js/JavaScript.js"></script>
         <script src="<?php echo htmlSpecialChars($basePath) ?>/js/ajax.js"></script>
+        <script src="<?php echo htmlSpecialChars($basePath) ?>/lightbox/js/lightbox-2.6.min.js"></script>
+        
 
     </body>
 </html>

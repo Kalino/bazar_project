@@ -14,15 +14,19 @@ section{
     padding-top: 5px;
 }
 
+#car_images{
+    width: 300px;
+}
+
 #show_small_menu{
     display: block;
     float: right;
     padding: 0;
     margin: 0;
-    width: 250px;
+    width: 200px;
     height: 50px;
     text-align: center;
-    z-index: 10;
+    z-index: 9999;
     cursor: pointer; 
     border-left: #dcdcdc solid thin;
     font-size: 19px;
@@ -31,7 +35,7 @@ section{
     color: #dcdcdc;
     background-image: url('../images/gear.png');
     background-repeat: no-repeat;
-    background-position: 65px 15px;
+    background-position: 45px 15px;
 }
 
 #show_small_menu:hover{
@@ -89,6 +93,7 @@ section{
     width: 100%;
     font-size: 19px;
     display: none;
+    overflow: hidden;
 }
 
 #id_login_small table{
