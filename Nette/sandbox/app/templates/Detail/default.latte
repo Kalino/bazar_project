@@ -1,12 +1,15 @@
 {* DETAIL INZERATU *}
 {block title} Detail inzerátu {/block}
+{block links}
+<link rel="stylesheet" href="{$basePath}/lightbox/css/lightbox.css">
+{/block}
 {block content}
 <div id="car_data">
     <h2>
         {$pole['brand']} {$pole['model']}
         {$pole['name']} 
     </h2>
-        <div class="date">{$pole['create']|date:'%d.%m.%Y'}</div>
+    <div class="date">{$pole['create']|date:'%d.%m.%Y'}</div>
     <hr>
     <h3>Základné údaje</h3>
     {$pole['region']} kraj, r.v.: {$pole['year']},
@@ -48,4 +51,7 @@
         {/foreach}
     </div>
 </div>
+{/block}
+{block scripts}
+        <script src="{$basePath}/lightbox/js/lightbox-2.6.min.js"></script>
 {/block}

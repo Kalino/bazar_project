@@ -16,32 +16,40 @@ class CarsPresenter extends BasePresenter {
     }
 
     public function actionDefault() {
-        
+        $this->actionShow();
     }
 
-    public function actionShow($id) {
+    public function actionShow($id = 1) {
         $values = $this->getSession('values');
         $sql = 'SELECT * FROM cars WHERE';
-        if ($values->pole['brand'] != NULL)
-            $sql = $sql . ' brand=' . htmlspecialchars(addslashes($values->pole['brand'])) . ' AND';
+        if (isset($values->pole['brand']))
+            if ($values->pole['brand'] != NULL)
+                $sql = $sql . ' brand=' . htmlspecialchars(addslashes($values->pole['brand'])) . ' AND';
         if (isset($values->pole['model']))
             if ($values->pole['model'] != NULL)
                 if (is_numeric($values->pole['model']))
                     $sql = $sql . ' model=' . htmlspecialchars(addslashes($values->pole['model'])) . ' AND';
-        if ($values->pole['yearfrom'] != NULL)
-            $sql = $sql . ' year>=' . htmlspecialchars(addslashes($values->pole['yearfrom'])) . ' AND';
-        if ($values->pole['yearto'] != NULL)
-            $sql = $sql . ' year<=' . htmlspecialchars(addslashes($values->pole['yearto'])) . ' AND';
-        if ($values->pole['gas'] != NULL)
-            $sql = $sql . ' gas=' . htmlspecialchars(addslashes($values->pole['gas'])) . ' AND';
-        if ($values->pole['gear'] != NULL)
-            $sql = $sql . ' gear=' . htmlspecialchars(addslashes($values->pole['gear'])) . ' AND';
-        if ($values->pole['pricefrom'] != NULL)
-            $sql = $sql . ' price>=' . htmlspecialchars(addslashes($values->pole['pricefrom'])) . ' AND';
-        if ($values->pole['priceto'] != NULL)
-            $sql = $sql . ' model<=' . htmlspecialchars(addslashes($values->pole['priceto'])) . ' AND';
-        if ($values->pole['region'] != NULL)
-            $sql = $sql . ' region=' . htmlspecialchars(addslashes($values->pole['region']));
+        if (isset($values->pole['yearfrom']))
+            if ($values->pole['yearfrom'] != NULL)
+                $sql = $sql . ' year>=' . htmlspecialchars(addslashes($values->pole['yearfrom'])) . ' AND';
+        if (isset($values->pole['yearto']))
+            if ($values->pole['yearto'] != NULL)
+                $sql = $sql . ' year<=' . htmlspecialchars(addslashes($values->pole['yearto'])) . ' AND';
+        if (isset($values->pole['gas']))
+            if ($values->pole['gas'] != NULL)
+                $sql = $sql . ' gas=' . htmlspecialchars(addslashes($values->pole['gas'])) . ' AND';
+        if (isset($values->pole['gear']))
+            if ($values->pole['gear'] != NULL)
+                $sql = $sql . ' gear=' . htmlspecialchars(addslashes($values->pole['gear'])) . ' AND';
+        if (isset($values->pole['pricefrom']))
+            if ($values->pole['pricefrom'] != NULL)
+                $sql = $sql . ' price>=' . htmlspecialchars(addslashes($values->pole['pricefrom'])) . ' AND';
+        if (isset($values->pole['priceto']))
+            if ($values->pole['priceto'] != NULL)
+                $sql = $sql . ' price<=' . htmlspecialchars(addslashes($values->pole['priceto'])) . ' AND';
+        if (isset($values->pole['region']))
+            if ($values->pole['region'] != NULL)
+                $sql = $sql . ' region=' . htmlspecialchars(addslashes($values->pole['region']));
         if (substr($sql, -3) == 'AND') {
             $sql = substr($sql, 0, -3);
         }

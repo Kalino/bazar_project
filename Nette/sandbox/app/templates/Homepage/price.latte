@@ -1,0 +1,29 @@
+{* HOMEPAGE *}
+{block content}
+{block links}
+<link rel="stylesheet" media="all" href="{$basePath}/slider/css/ithing-min.css">
+
+{/block}
+<div id="left_panel">
+
+    <div class="center">Zvoľte rok:</div>
+     <div id="slideryear"></div><br>
+    <div class="center">Zvoľte cenu:</div>
+    <div id="sliderprice"></div>
+    {control shortSearchForm}
+</div>
+
+<div id="right_panel">
+    {control topCars}
+</div>
+{/block}
+{block scripts}
+<script src="{$basePath}/js/jquery-ui.min.js"></script>
+<script src="{$basePath}/slider/jqrangeslider-min.js"></script>
+<script src="{$basePath}/js/slider.js"></script>
+{/block}
+
+
+
+
+

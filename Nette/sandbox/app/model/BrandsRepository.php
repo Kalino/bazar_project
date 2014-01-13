@@ -19,6 +19,10 @@ class BrandsRepository extends Repository {
         //return $this->getTable()->order('name');
         return $this->connection->query('SELECT ID,name,src FROM brands ORDER BY name ASC;');
     }
+    
+    public function getBrand($id){
+        $this->connection->query('SELECT brand FROM models WHERE id=' . $id);
+    }
 
     public function getModel($value) {
         return $this->connection->query('SELECT id,model FROM models WHERE brand=' . $value . ';');

@@ -9,7 +9,7 @@ class TopCarsControl extends Nette\Application\UI\Control {
     private $selected;
 
     public function __construct() {
-        parent::__construct(); // vždy je potřeba volat rodičovský konstruktor
+        parent::__construct(); 
     }
 
     public function render() {

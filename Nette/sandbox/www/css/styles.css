@@ -63,6 +63,7 @@ nav a, nav #id_ref{
 nav a:hover, nav #id_ref:hover{
     background-color: #AAAAAA;
     color: black;
+    transition: background-color 300ms linear;
 }
 
 input, select{
@@ -91,6 +92,7 @@ input[type="submit"]{
 
 input[type="submit"]:hover{
     background-color: #aaaaaa;
+    transition: background-color 300ms linear;
     color: #444444;
 }
 
@@ -127,6 +129,7 @@ select:focus, input:focus:not([type="submit"]){
 
 #id_login:hover{
     background-color: rgba(245,245,245, 1);
+    transition: background-color 300ms linear;
 }
 
 #id_login form{
@@ -253,6 +256,7 @@ th{
 
 #login_top:hover{
     background-color: rgba(204,204,204,0.5);
+    transition: background-color 300ms linear;
 }
 
 .car_info{
@@ -413,17 +417,20 @@ th{
 }
 
 .center{
-    width: 120px;
+    width: 160px;
     clear: both;
     margin: 0 auto;
     margin-bottom: 10px;
+    font-size: 19px;
+    font-weight: 600;
 }
 
 #show_normal{
     text-align: center;
     display: block;
     color: #ededed;
-    padding: 5px;
+    padding: 10px;
+    padding-bottom: 15px;
     border: rgb(200,200,200) solid thin;
     border-radius: 5px;
     height: 40px;
@@ -433,6 +440,7 @@ th{
 #show_normal:hover{
     background-color: #aaaaaa;
     color: #444444;
+    transition: background-color 300ms linear;
 }
 
 .center a{
@@ -454,6 +462,35 @@ th{
 
 #id_login_small{
     display: none;
+}
+
+#slideryear{
+    width: 90%;
+    margin: 0 auto;
+}
+
+#sliderprice{
+    width: 90%;
+    margin: 0 auto;
+}
+
+#frm-shortSearchForm{
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#frm-shortSearchForm input{
+    width: 150px;
+    height: 65px;
+    font-size: 20px;
+}
+
+.centertext{
+    font-size: 18px;
+    margin-left: 40%;
+    margin: 10px;
+    text-align: center;
 }
 
 footer hr{

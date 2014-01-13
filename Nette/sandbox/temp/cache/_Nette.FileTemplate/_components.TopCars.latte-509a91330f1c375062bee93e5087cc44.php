@@ -1,10 +1,10 @@
-<?php //netteCache[01]000385a:2:{s:4:"time";s:21:"0.61430800 1386613009";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:63:"C:\wamp2\www\projekt\Nette\sandbox\app\components\TopCars.latte";i:2;i:1386613008;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000385a:2:{s:4:"time";s:21:"0.37040600 1389538767";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:63:"C:\wamp2\www\projekt\Nette\sandbox\app\components\TopCars.latte";i:2;i:1389538766;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\wamp2\www\projekt\Nette\sandbox\app\components\TopCars.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'uyx4gmwvpm')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '4slni8u5n4')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 

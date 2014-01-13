@@ -1,37 +1,44 @@
-<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.50056900 1388928893";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte";i:2;i:1388928891;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.60637100 1389308196";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte";i:2;i:1389308183;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 's2j28ce65s')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'mp2k469g5c')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb73ff45be87_title')) { function _lb73ff45be87_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb4da855775f_title')) { function _lb4da855775f_title($_l, $_args) { extract($_args)
 ?>Domovská stránka<?php
+}}
+
+//
+// block links
+//
+if (!function_exists($_l->blocks['links'][] = '_lbcdad90c0dc_links')) { function _lbcdad90c0dc_links($_l, $_args) { extract($_args)
+;
 }}
 
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lb12ef193eb3_head')) { function _lb12ef193eb3_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lbee555cb3eb_head')) { function _lbee555cb3eb_head($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb3a43b3cf97_content')) { function _lb3a43b3cf97_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbb0b03de167_content')) { function _lbb0b03de167_content($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb47ee9c883e_scripts')) { function _lb47ee9c883e_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb45cdc89f0c_scripts')) { function _lb45cdc89f0c_scripts($_l, $_args) { extract($_args)
 ;
 }}
 
@@ -68,8 +75,9 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
         <link rel="stylesheet" media="all" href="<?php echo htmlSpecialChars($basePath) ?>/css/styles.css" />
         <link rel="stylesheet" media="screen and (max-width: 1024px)" href="<?php echo htmlSpecialChars($basePath) ?>/css/small_styles.css" />
         <link rel="stylesheet" media="screen and (max-width: 720px)" href="<?php echo htmlSpecialChars($basePath) ?>/css/very_small_styles.css" />
-        <link rel="stylesheet" href="<?php echo htmlSpecialChars($basePath) ?>/lightbox/css/lightbox.css" />
         <link rel="shortcut icon" href="<?php echo htmlSpecialChars($basePath) ?>/favicon.ico" />
+        <?php call_user_func(reset($_l->blocks['links']), $_l, get_defined_vars())  ?>
+
         
         <?php call_user_func(reset($_l->blocks['head']), $_l, get_defined_vars())  ?>
 
@@ -123,13 +131,14 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
                 Copyright 2014 &copy;
             </footer>
 
-<?php call_user_func(reset($_l->blocks['scripts']), $_l, get_defined_vars())  ?>
+            
         </div>
-        <script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.js"></script>
+        <script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.js"></script>  
+         
         <script src="<?php echo htmlSpecialChars($basePath) ?>/js/nette.ajax.js"></script>
         <script src="<?php echo htmlSpecialChars($basePath) ?>/js/JavaScript.js"></script>
         <script src="<?php echo htmlSpecialChars($basePath) ?>/js/ajax.js"></script>
-        <script src="<?php echo htmlSpecialChars($basePath) ?>/lightbox/js/lightbox-2.6.min.js"></script>
+<?php call_user_func(reset($_l->blocks['scripts']), $_l, get_defined_vars())  ?>
         
 
     </body>

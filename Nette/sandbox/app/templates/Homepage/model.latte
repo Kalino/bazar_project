@@ -1,0 +1,25 @@
+{* HOMEPAGE *}
+{block content}
+<div id="left_panel">
+
+    <div class="center">Vyberte model</div>
+    {foreach $pole as $item}
+        <a href="{$basePath}/homepage/price/{$item->id}">
+            <div class="small_block">
+                <div>
+                    {$item->model}
+                </div>
+            </div>
+        </a>
+    {/foreach}
+</div>
+
+<div id="right_panel">
+    {control topCars}
+</div>
+{/block}
+
+
+
+
+
