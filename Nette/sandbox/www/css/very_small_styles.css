@@ -59,7 +59,7 @@ section{
     cursor: pointer;
 }
 
-#small_menu a, #small_menu_bt{
+#small_menu a, #small_menu_bt, #id_logout_small{
     display: block;
     float: left;
     padding: 0;
@@ -79,7 +79,7 @@ section{
     transition: background-color 300ms linear;
 }
 
-#small_menu a:hover, #small_menu_bt:hover{
+#small_menu a:hover, #small_menu_bt:hover, #id_logout_small:hover{
     background-color: rgba(0,0,0,0.9);
     transition: background-color 350ms linear;
 }
@@ -122,4 +122,8 @@ section{
 #id_login_small input[type="submit"]:hover{
     color: #000000;
     background-color: rgba(255,255,255,0.8);
+}
+
+#id_logout_small input{
+    display: none;
 }

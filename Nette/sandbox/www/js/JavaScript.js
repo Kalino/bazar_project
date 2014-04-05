@@ -1,6 +1,6 @@
 $(function () {
     $.nette.init();
-    $("#frm-newSearchForm").animate({marginLeft:'150px'});
+    $("#frm-newSearchForm").animate({marginLeft: '150px'});
     $(".small_block").slideDown(800); 
 });
 

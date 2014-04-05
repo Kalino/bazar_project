@@ -7,7 +7,7 @@
         <a href="{$basePath}/detail/show/{$item->id}" target="_blank">
             <div class="car_info">
                 <div class="car_info_title">{$znacky[$item->brand]} {$modely[$item->model]} {$item->name}
-                    <div class="date">{$item->create|date:'%d.%m.%Y'}</div>
+                    <div class="date">{$item->create_date|date:'%d.%m.%Y'}</div>
                 </div>
                 <div class="car_info_image">
                     <img src="{$basePath}/images/cars/{$item->main_image}" alt="car_image">

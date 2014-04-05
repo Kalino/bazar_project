@@ -1,26 +1,15 @@
-<div class="right_top">
-    <div class="top">BMW rad 3</div>
-    <div>
-    <img src="{$basePath}/images/cars/bmw_3.jpg" alt="car_image">
-    <p>r.v.2005, 218PS, 4.0 benzín, automatická prevodovka, 8xAirbag, ABS, EPS, dažďový senzor</p>
-    <span>Cena: 7999 &euro;</span>
-    </div>
-</div>
-
-<div class="right_top">
-    <div class="top">BMW rad 3</div>
-    <div>
-    <img src="{$basePath}/images/cars/bmw_3.jpg" alt="car_image">
-    <p>r.v.2005, 218PS, 4.0 benzín, automatická prevodovka, 8xAirbag, ABS, EPS, dažďový senzor</p>
-    <span>Cena: 7999 &euro;</span>
-    </div>
-</div>
-
-<div class="right_top">
-    <div class="top">BMW rad 3</div>
-    <div>
-    <img src="{$basePath}/images/cars/bmw_3.jpg" alt="car_image">
-    <p>r.v.2005, 218PS, 4.0 benzín, automatická prevodovka, 8xAirbag, ABS, EPS, dažďový senzor</p>
-    <span>Cena: 7999 &euro;</span>
-    </div>
-</div>
+{foreach $cars as $item}
+    <a href="{$basePath}/detail/show/{$item->id}" target="_blank">
+        <div class="right_top">
+            <div class="top">
+                {$znacky[$item->brand]} {$modely[$item->model]} {$item->name}
+            </div>
+            <div>
+                <img src="{$basePath}/images/cars/{$item->main_image}" alt="car_image">
+                <p> r.v.: {$item->year}, Objem motora: {$item->capacity}, {$item->power}&nbsp;kW, {$stringy[$item->gas]}, 
+                    {$item->kilometres}&nbsp;km, {$stringy[$item->gear]}&nbsp;prevodovka</p>
+                <span>Cena: {$item->price}&euro;</span>
+            </div>
+        </div>
+    </a>
+{/foreach}

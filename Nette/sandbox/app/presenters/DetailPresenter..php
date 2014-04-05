@@ -27,7 +27,7 @@ class DetailPresenter extends BasePresenter {
                 $pole['name'] = $item->name;
                 $pole['price'] = $item->price;
                 $pole['phone'] = $item->phone;
-                $pole['create'] = $item->create;
+                $pole['create'] = $item->create_date;
                 $pole['main_image'] = $item->main_image;
                 $pole['year'] = $item->year;
                 $pole['capacity'] = $item->capacity;

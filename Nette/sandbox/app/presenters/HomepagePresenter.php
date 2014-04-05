@@ -9,13 +9,15 @@ class HomepagePresenter extends BasePresenter {
 
     private $brandsRepository;
     private $brandid;
+    private $carsRepository;
 
     protected function startup() {
         parent:: startup();
     }
 
-    public function inject(Todo\BrandsRepository $brandsRepository) {
+    public function inject(Todo\BrandsRepository $brandsRepository, Todo\CarsRepository $carsRepository) {
         $this->brandsRepository = $brandsRepository;
+        $this->carsRepository = $carsRepository;
     }
 
     public function actionDefault() {
@@ -47,7 +49,6 @@ class HomepagePresenter extends BasePresenter {
     }
 
     public function handleModel($value) {
-
         $models = $this->brandsRepository->getModel($value);
         $modely = '<option>Vyberte model</option>';
 
@@ -60,7 +61,7 @@ class HomepagePresenter extends BasePresenter {
     
  
     protected function createComponentTopCars() {
-        return new Todo\TopCarsControl();
+        return new Todo\TopCarsControl($this->carsRepository);
     }
 
     protected function createComponentNewSearchForm() {
@@ -78,10 +79,11 @@ class HomepagePresenter extends BasePresenter {
         }
 
         $years = array();
-        for ($i = 2013; $i >= 1970; $i--) {
+        for ($i = 2014; $i >= 1970; $i--) {
             array_push($years, $i);
         }
         $price = array(500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 12000, 14000, 16000, 18000, 20000, 25000, 30000, 35000, 40000, 45000, 50000, 750000, 100000, 125000, 150000, 175000, 200000);
+        $order = array('ceny', 'dátumu');
         $brands = $this->brandsRepository->getBrands();
         foreach ($brands as $brand) {
             $pole[$brand->ID] = $brand->name;
@@ -117,6 +119,8 @@ class HomepagePresenter extends BasePresenter {
         $form->addSelect('region', 'Kraj:')
                 ->setPrompt('Vyberte kraj')
                 ->setItems($region, TRUE);
+        $form->addSelect('order', 'Zoradiť podľa:')
+                ->setItems($order, TRUE);
 
 
         $form->addSubmit('search', 'Vyhľadať');

@@ -32,6 +32,7 @@ common:
 		brandsRepository: Todo\BrandsRepository
 		detailRepository: Todo\DetailRepository
 		carsRepository: Todo\CarsRepository
+		addRepository: Todo\AddRepository
 	factories:
 
 

@@ -11,16 +11,23 @@ class CarsRepository extends Repository {
         }
         
         public function getBrands(){
-            return $this->connection->query('SELECT ID,name FROM brands');
+            return $this->connection->query('SELECT ID,name FROM brands;');
         }
         
          public function getModels(){
-            return $this->connection->query('SELECT id,model FROM models');
+            return $this->connection->query('SELECT id,model FROM models;');
         }
         
          public function getStrings(){
-            return $this->connection->query('SELECT id,name FROM strings');
+            return $this->connection->query('SELECT id,name FROM strings;');
         }
-
+        
+        public function getOwnedCars($id){
+            return $this->connection->query("SELECT * FROM cars WHERE user=" . $id . ";");
+        }
+        
+        public function getNewCars(){
+            return $this->connection->query("SELECT * FROM cars ORDER BY create_date LIMIT 3;");
+        }
 
 }

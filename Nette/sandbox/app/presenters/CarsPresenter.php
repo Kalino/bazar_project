@@ -19,6 +19,40 @@ class CarsPresenter extends BasePresenter {
         $this->actionShow();
     }
 
+    public function actionOwn() {
+        $user = $this->getUser();
+        if ($user->isLoggedIn()) {
+            $cars = $this->carsRepository->getOwnedCars($user->identity->getId());
+            if ($cars->getRowCount() == 0) {
+                $this->setView('none');
+            } else {
+                $brands = $this->carsRepository->getBrands();
+                $models = $this->carsRepository->getModels();
+                $strings = $this->carsRepository->getStrings();
+
+                foreach ($brands as $item) {
+                    $znacky[$item->ID] = $item->name;
+                }
+
+                foreach ($models as $item) {
+                    $modely[$item->id] = $item->model;
+                }
+
+                foreach ($strings as $item) {
+                    $stringy[$item->id] = $item->name;
+                }
+
+                $this->template->znacky = $znacky;
+                $this->template->modely = $modely;
+                $this->template->stringy = $stringy;
+                $this->template->cars = $cars;
+                $this->setView('default');
+            }
+        } else {
+            $this->setView('none');
+        }
+    }
+
     public function actionShow($id = 1) {
         $values = $this->getSession('values');
         $sql = 'SELECT * FROM cars WHERE';
@@ -56,6 +90,14 @@ class CarsPresenter extends BasePresenter {
         if (substr($sql, -5) == 'WHERE') {
             $sql = substr($sql, 0, -5);
         }
+        if (isset($values->pole['order']))
+            if ($values->pole['order'] != NULL)
+                if ($values->pole['order'] == 0) {
+                    $sql .= 'ORDER BY price';
+                } else {
+                    $sql .= 'ORDER BY create_date DESC';
+                }
+
         $sql = $sql . ';';
 
         $cars = $this->carsRepository->getCarsShort($sql);
@@ -92,7 +134,7 @@ class CarsPresenter extends BasePresenter {
 
     protected function createComponentTopCars() {
 
-        return new Todo\TopCarsControl();
+        return new Todo\TopCarsControl($this->carsRepository);
     }
 
     public function renderShow() {

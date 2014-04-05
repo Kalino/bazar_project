@@ -1,44 +1,44 @@
-<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.60637100 1389308196";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte";i:2;i:1389308183;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.68220300 1396615620";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte";i:2;i:1396615618;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'mp2k469g5c')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'wehle7riti')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb4da855775f_title')) { function _lb4da855775f_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb797e4e29e3_title')) { function _lb797e4e29e3_title($_l, $_args) { extract($_args)
 ?>Domovská stránka<?php
 }}
 
 //
 // block links
 //
-if (!function_exists($_l->blocks['links'][] = '_lbcdad90c0dc_links')) { function _lbcdad90c0dc_links($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['links'][] = '_lba7fa19cedb_links')) { function _lba7fa19cedb_links($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lbee555cb3eb_head')) { function _lbee555cb3eb_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lb5c16806a0d_head')) { function _lb5c16806a0d_head($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbb0b03de167_content')) { function _lbb0b03de167_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb4e198ba640_content')) { function _lb4e198ba640_content($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb45cdc89f0c_scripts')) { function _lb45cdc89f0c_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb69079583f0_scripts')) { function _lb69079583f0_scripts($_l, $_args) { extract($_args)
 ;
 }}
 
@@ -78,7 +78,7 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
         <link rel="shortcut icon" href="<?php echo htmlSpecialChars($basePath) ?>/favicon.ico" />
         <?php call_user_func(reset($_l->blocks['links']), $_l, get_defined_vars())  ?>
 
-        
+
         <?php call_user_func(reset($_l->blocks['head']), $_l, get_defined_vars())  ?>
 
     </head>
@@ -90,16 +90,31 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
                 <a id="id_logo" href="<?php echo htmlSpecialChars($_control->link("Homepage:default")) ?>
 "><img src="<?php echo htmlSpecialChars($basePath) ?>/images/logo.png" alt="logo" /></a>
                 <div id="normal_menu">
-                    <div id="id_ref" onclick="ShowLoginDiv();">Prihlásenie</div>
-                    <a href="<?php echo htmlSpecialChars($_control->link("Homepage:default")) ?>
-">Link</a>
-                    <a href="<?php echo htmlSpecialChars($_control->link("Homepage:default")) ?>
-">Link</a>
+<?php if (!$user->isLoggedIn()): ?>
+                        <div id="id_ref" onclick="ShowLoginDiv();">Prihlásenie</div>
+<?php else: ?>
+                        <div id="id_logout" title="Ste prihlásený ako <?php echo htmlSpecialChars($user->identity->username) ?>">
+<?php $_ctrl = $_control->getComponent("newLogoutForm"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ?>
+                        </div>
+<?php endif ;if ($user->isLoggedIn()): ?>
+                        <a href="<?php echo htmlSpecialChars($_control->link("Cars:own")) ?>
+">Moje inzeráty</a>
+                        <a href="<?php echo htmlSpecialChars($_control->link("Add:default")) ?>
+">Pridať inzerát</a>
+<?php endif ?>
                     <a href="<?php echo htmlSpecialChars($_control->link("About:")) ?>
 ">About</a>
+<?php if ($user->isLoggedIn()): ?>
+                        <div id="id_user_info" title="">
+                            Ste prihlásený ako <?php echo Nette\Templating\Helpers::escapeHtml($user->identity->username, ENT_NOQUOTES) ?>
+
+                        </div>
+<?php endif ?>
                     <div id="id_login">
                         <div id="login_top">Prihlásenie</div>
 <?php $_ctrl = $_control->getComponent("newLoginForm"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ?>
+                        <a id="id_link_registration" href="<?php echo htmlSpecialChars($_control->link("Registration:default")) ?>
+">Registrácia</a>
                     </div>
                 </div>
                 <div id="show_small_menu" onclick="ShowSmallMenu();">Menu</div>
@@ -108,14 +123,22 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
 
             <section>
                 <div id="small_menu">
-                    <div id="small_menu_bt" onclick="ShowLoginDivSmall();">Prihlásenie</div>
-                    <div id="id_login_small">
+<?php if (!$user->isLoggedIn()): ?>
+                        <div id="small_menu_bt" onclick="ShowLoginDivSmall();">Prihlásenie</div>
+                        <div id="id_login_small">
 <?php $_ctrl = $_control->getComponent("newLoginForm"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ?>
-                    </div>
-                    <a href="<?php echo htmlSpecialChars($_control->link("Homepage:default")) ?>
-">Link</a>
-                    <a href="<?php echo htmlSpecialChars($_control->link("Homepage:default")) ?>
-">Link</a>
+                        </div>
+<?php else: ?>
+                        <div id="id_logout_small" onclick="document.forms['frm-newLogoutForm'].submit();" title="Ste prihlásený ako <?php echo htmlSpecialChars($user->identity->username) ?>">
+                            Odhlásenie
+<?php $_ctrl = $_control->getComponent("newLogoutForm"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ?>
+                        </div>
+<?php endif ;if ($user->isLoggedIn()): ?>
+                        <a href="<?php echo htmlSpecialChars($_control->link("Cars:own")) ?>
+">Moje inzeráty</a>
+                        <a href="<?php echo htmlSpecialChars($_control->link("Add:default")) ?>
+">Pridať inzerát</a>
+<?php endif ?>
                     <a href="<?php echo htmlSpecialChars($_control->link("About:")) ?>
 ">About</a>
                 </div>
@@ -131,15 +154,15 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
                 Copyright 2014 &copy;
             </footer>
 
-            
+
         </div>
         <script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.js"></script>  
-         
+
         <script src="<?php echo htmlSpecialChars($basePath) ?>/js/nette.ajax.js"></script>
         <script src="<?php echo htmlSpecialChars($basePath) ?>/js/JavaScript.js"></script>
         <script src="<?php echo htmlSpecialChars($basePath) ?>/js/ajax.js"></script>
 <?php call_user_func(reset($_l->blocks['scripts']), $_l, get_defined_vars())  ?>
-        
+
 
     </body>
 </html>

@@ -12,7 +12,7 @@
         <link rel="stylesheet" media="screen and (max-width: 720px)" href="{$basePath}/css/very_small_styles.css">
         <link rel="shortcut icon" href="{$basePath}/favicon.ico">
         {block links}{/block}
-        
+
         {block head}{/block}
     </head>
 
@@ -22,13 +22,27 @@
             <nav>
                 <a n:href="Homepage:default" id="id_logo"><img src="{$basePath}/images/logo.png" alt="logo"></a>
                 <div id="normal_menu">
-                    <div id="id_ref" onclick="ShowLoginDiv();">Prihlásenie</div>
-                    <a n:href="Homepage:default">Link</a>
-                    <a n:href="Homepage:default">Link</a>
+                    {if !$user->isLoggedIn()}
+                        <div id="id_ref" onclick="ShowLoginDiv();">Prihlásenie</div>
+                    {else}
+                        <div id="id_logout" title="Ste prihlásený ako {$user->identity->username}">
+                            {control newLogoutForm}
+                        </div>
+                    {/if}
+                    {if $user->isLoggedIn()}
+                        <a n:href="Cars:own">Moje inzeráty</a>
+                        <a n:href="Add:default">Pridať inzerát</a>
+                    {/if}
                     <a n:href="About:">About</a>
+                    {if $user->isLoggedIn()}
+                        <div id="id_user_info" title="">
+                            Ste prihlásený ako {$user->identity->username}
+                        </div>
+                    {/if}
                     <div id="id_login">
                         <div id="login_top">Prihlásenie</div>
                         {control newLoginForm}
+                        <a id="id_link_registration" n:href="Registration:default">Registrácia</a>
                     </div>
                 </div>
                 <div id="show_small_menu" onclick="ShowSmallMenu();">Menu</div>
@@ -37,12 +51,21 @@
 
             <section>
                 <div id="small_menu">
-                    <div id="small_menu_bt" onclick="ShowLoginDivSmall();">Prihlásenie</div>
-                    <div id="id_login_small">
-                        {control newLoginForm}
-                    </div>
-                    <a n:href="Homepage:default">Link</a>
-                    <a n:href="Homepage:default">Link</a>
+                    {if !$user->isLoggedIn()}
+                        <div id="small_menu_bt" onclick="ShowLoginDivSmall();">Prihlásenie</div>
+                        <div id="id_login_small">
+                            {control newLoginForm}
+                        </div>
+                    {else}
+                        <div id="id_logout_small" onclick="document.forms['frm-newLogoutForm'].submit();" title="Ste prihlásený ako {$user->identity->username}">
+                            Odhlásenie
+                            {control newLogoutForm}
+                        </div>
+                    {/if}
+                    {if $user->isLoggedIn()}
+                        <a n:href="Cars:own">Moje inzeráty</a>
+                        <a n:href="Add:default">Pridať inzerát</a>
+                    {/if}
                     <a n:href="About:">About</a>
                 </div>
 
@@ -58,16 +81,16 @@
                 Copyright 2014 &copy;
             </footer>
 
-            
+
         </div>
         <script src="{$basePath}/js/jquery.js"></script>  
-         
+
         <script src="{$basePath}/js/nette.ajax.js"></script>
         <script src="{$basePath}/js/JavaScript.js"></script>
         <script src="{$basePath}/js/ajax.js"></script>
         {block scripts}
         {/block}
-        
+
 
     </body>
 </html>

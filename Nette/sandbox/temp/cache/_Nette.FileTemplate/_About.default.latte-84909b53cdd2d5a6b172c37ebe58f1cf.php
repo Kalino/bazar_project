@@ -1,16 +1,24 @@
-<?php //netteCache[01]000390a:2:{s:4:"time";s:21:"0.07756100 1389642848";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:68:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\About\default.latte";i:2;i:1389642834;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000390a:2:{s:4:"time";s:21:"0.06185500 1396615147";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:68:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\About\default.latte";i:2;i:1396615146;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\wamp2\www\projekt\Nette\sandbox\app\templates\About\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '7tafkr3gij')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'nwuzvmi6gk')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
+// block title
+//
+if (!function_exists($_l->blocks['title'][] = '_lbca3126f989_title')) { function _lbca3126f989_title($_l, $_args) { extract($_args)
+?>About
+<?php
+}}
+
+//
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb8437463ea4_content')) { function _lb8437463ea4_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb0d04c3fc02_content')) { function _lb0d04c3fc02_content($_l, $_args) { extract($_args)
 ?><div id="left_panel" style='width: 600px;'>
     <h1>ABOUT</h1>
     <hr />
@@ -74,4 +82,6 @@ if ($_l->extends) {
 // main template
 //
 if ($_l->extends) { ob_end_clean(); return Nette\Latte\Macros\CoreMacros::includeTemplate($_l->extends, get_defined_vars(), $template)->render(); }
-call_user_func(reset($_l->blocks['content']), $_l, get_defined_vars()) ; 
+call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())  ?>
+
+<?php call_user_func(reset($_l->blocks['content']), $_l, get_defined_vars()) ; 
