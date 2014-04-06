@@ -1,10 +1,10 @@
-<?php //netteCache[01]000385a:2:{s:4:"time";s:21:"0.47210500 1396612739";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:63:"C:\wamp2\www\projekt\Nette\sandbox\app\components\TopCars.latte";i:2;i:1396612738;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000385a:2:{s:4:"time";s:21:"0.56756900 1396795480";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:63:"C:\wamp2\www\projekt\Nette\sandbox\app\components\TopCars.latte";i:2;i:1396786053;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\wamp2\www\projekt\Nette\sandbox\app\components\TopCars.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 't0ezjsu839')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'utl7gdqyxd')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 
@@ -26,7 +26,7 @@ $iterations = 0; foreach ($cars as $item): ?>
 
             </div>
             <div>
-                <img src="<?php echo htmlSpecialChars($basePath) ?>/images/cars/<?php echo htmlSpecialChars($item->main_image) ?>" alt="car_image" />
+                <img src="<?php echo htmlSpecialChars($basePath) ?>/images/cars/small/<?php echo htmlSpecialChars($item->main_image) ?>" alt="car_image" />
                 <p> r.v.: <?php echo Nette\Templating\Helpers::escapeHtml($item->year, ENT_NOQUOTES) ?>
 , Objem motora: <?php echo Nette\Templating\Helpers::escapeHtml($item->capacity, ENT_NOQUOTES) ?>
 , <?php echo Nette\Templating\Helpers::escapeHtml($item->power, ENT_NOQUOTES) ?>

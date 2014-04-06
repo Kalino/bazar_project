@@ -57,6 +57,7 @@ class DetailPresenter extends BasePresenter {
             }
 
             $images = $this->detailRepository->getImagesSrc($id);
+            $image = array();
             foreach ($images as $item) {
                 $image[] = $item->src;
             }

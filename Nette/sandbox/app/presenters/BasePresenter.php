@@ -19,6 +19,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter {
         $user = $this->getUser();
         if ($user->isLoggedIn()) {
             $user->logout();
+            $this->redirect('Homepage:default');
         }
     }
 
@@ -43,12 +44,10 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter {
         $password = $values['password'];
         try {
             $user->login($username, $password);
+            $this->redirect('Homepage:default');
         } catch (Nette\Security\AuthenticationException $e) {
             echo 'Chyba: ', $e->getMessage();
         }
-
-
-        //echo $this->calculateHash($password);
     }
 
 }

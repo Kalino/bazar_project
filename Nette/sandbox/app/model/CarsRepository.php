@@ -27,7 +27,7 @@ class CarsRepository extends Repository {
         }
         
         public function getNewCars(){
-            return $this->connection->query("SELECT * FROM cars ORDER BY create_date LIMIT 3;");
+            return $this->connection->query("SELECT * FROM cars ORDER BY insert_time DESC LIMIT 3;");
         }
 
 }
