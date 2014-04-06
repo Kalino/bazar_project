@@ -75,16 +75,7 @@ nav a, nav #id_ref, #id_logout{
     color: #ffffff ;    
 }
 
-#id_link_registration{
-    display: block;
-    text-decoration: underline;
-    color:blue;
-    font-size: 12px;
-    float:left;
-    height: 30px;
-    width: 70px;
-    padding: 15px;
-}
+
 
 nav a:hover, nav #id_ref:hover{
     background-color: #AAAAAA;
@@ -93,6 +84,7 @@ nav a:hover, nav #id_ref:hover{
 }
 
 #id_link_registration:hover{
+    background-color: transparent;
 }
 
 input, select{
@@ -365,9 +357,22 @@ th{
     margin-left: 3%;
 }
 
-#add_form form{
-    margin: 10px;
+#add_form fieldset legend{
+    text-align: center;
 }
+
+#add_form table{
+    width: 100%;
+}
+
+#add_form legend{
+    font-weight: bold;
+}
+
+#add_form th{
+    width: 220px;
+}
+
 
 #car_data{
     float: left;
@@ -545,6 +550,25 @@ th{
     border: #006AEB solid thin;
 }
 
+#id_login a{
+}
+
+#id_link_registration{
+    display: block;
+    text-decoration: underline;
+    color:blue;
+    font-size: 14px;
+    float:right;
+    line-height: 10px;
+    padding: 0;
+    min-width: 60px;
+    width: 80px;
+    max-width: 80px;
+    text-align: left;
+    height: 25px;
+    padding: 2px;
+}
+
 footer hr{
     width: 480px;
     margin: 0 auto;
@@ -553,6 +577,8 @@ footer hr{
     padding: 0;
     border-top: rgb(200,200,200) solid thin;
 }
+
+
 
 footer{
     font-family: sans-serif;

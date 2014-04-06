@@ -32,7 +32,6 @@ class AddPresenter extends BasePresenter {
 
     protected function createComponentNewAddForm() {
         $brandsWithModels = $this->addRepository->getBrandsWithModels();
-        #$pom_pole = array(array());
         foreach ($brandsWithModels as $prvok) {
             $znacka = $prvok['name'];
             $model = $prvok['model'];
@@ -111,7 +110,7 @@ class AddPresenter extends BasePresenter {
             }
         }
 
-
+        $form->addGroup();
         $form->addText('price', 'Cena(€): ')
                 ->addRule(Form::PATTERN, 'Musí obsahovať iba číslice', '[0-9]*')
                 ->setRequired("Prosím, vyplňte všetky položky");
@@ -136,7 +135,9 @@ class AddPresenter extends BasePresenter {
                 $form->addCheckbox('check' . $row->id, $row->name);
             }
         }
+        $form->addGroup();
         $form->addTextArea('about', 'Ďalší popis auta');
+        $form->addGroup();
 
 
 
@@ -186,9 +187,9 @@ class AddPresenter extends BasePresenter {
                 }
             }
         }
-        foreach ($files as $key => $value){
-            if(substr($key, 0, 5) == 'check'){
-                if($value){
+        foreach ($files as $key => $value) {
+            if (substr($key, 0, 5) == 'check') {
+                if ($value) {
                     $this->addRepository->insertProperties(intval(substr($key, 5)), $car_id);
                 }
             }
