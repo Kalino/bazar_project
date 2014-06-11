@@ -25,7 +25,7 @@ class BrandsRepository extends Repository {
     }
 
     public function getModel($value) {
-        return $this->connection->query('SELECT id,model FROM models WHERE brand=' . $value . ';');
+        return $this->connection->query('SELECT id,model FROM models WHERE brand=' . $value . ' ORDER BY model;');
     }
     
     public function getStrings(){

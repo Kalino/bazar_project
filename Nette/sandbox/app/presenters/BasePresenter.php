@@ -42,11 +42,15 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter {
         $values = $form->getValues();
         $username = $values['name'];
         $password = $values['password'];
+        $successful = true;
         try {
             $user->login($username, $password);
-            $this->redirect('Homepage:default');
         } catch (Nette\Security\AuthenticationException $e) {
-            echo 'Chyba: ', $e->getMessage();
+            $successful = false;
+            $this->flashMessage($e->getMessage());
+        }
+        if ($successful) {
+            $this->redirect('Homepage:default');
         }
     }
 

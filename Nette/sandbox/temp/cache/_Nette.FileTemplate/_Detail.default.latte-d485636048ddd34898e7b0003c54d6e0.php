@@ -1,23 +1,23 @@
-<?php //netteCache[01]000391a:2:{s:4:"time";s:21:"0.99291700 1396809778";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:69:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\Detail\default.latte";i:2;i:1396786137;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000391a:2:{s:4:"time";s:21:"0.50702900 1402259026";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:69:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\Detail\default.latte";i:2;i:1402259020;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\wamp2\www\projekt\Nette\sandbox\app\templates\Detail\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'mfjbssnk8o')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'w2atxyzkyi')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb11bf78741c_title')) { function _lb11bf78741c_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbafda0ee81d_title')) { function _lbafda0ee81d_title($_l, $_args) { extract($_args)
 ?> Detail inzerátu<?php
 }}
 
 //
 // block links
 //
-if (!function_exists($_l->blocks['links'][] = '_lbae9d959702_links')) { function _lbae9d959702_links($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['links'][] = '_lbc7014c87bd_links')) { function _lbc7014c87bd_links($_l, $_args) { extract($_args)
 ?><link rel="stylesheet" href="<?php echo htmlSpecialChars($basePath) ?>/lightbox/css/lightbox.css" />
 <?php
 }}
@@ -25,7 +25,7 @@ if (!function_exists($_l->blocks['links'][] = '_lbae9d959702_links')) { function
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb4daf341bd0_content')) { function _lb4daf341bd0_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb85b06aa89f_content')) { function _lb85b06aa89f_content($_l, $_args) { extract($_args)
 ?><div id="car_data">
     <h2>
         <?php echo Nette\Templating\Helpers::escapeHtml($pole['brand'], ENT_NOQUOTES) ?>
@@ -33,6 +33,9 @@ if (!function_exists($_l->blocks['content'][] = '_lb4daf341bd0_content')) { func
 
         <?php echo Nette\Templating\Helpers::escapeHtml($pole['name'], ENT_NOQUOTES) ?>
 
+<?php if ($user->isLoggedIn() && ($user->identity->id == $pole['user'] || $user->identity->role === 'admin')): ?>
+            <a href="<?php echo htmlSpecialChars($basePath) ?>/change/update/<?php echo htmlSpecialChars($pole['id']) ?>"><div class="btn_change">Upraviť</div></a>
+<?php endif ?>
     </h2>
     <div class="date"><?php echo Nette\Templating\Helpers::escapeHtml($template->date($pole['create'], '%d.%m.%Y'), ENT_NOQUOTES) ?></div>
     <hr />
@@ -87,8 +90,8 @@ if (!function_exists($_l->blocks['content'][] = '_lb4daf341bd0_content')) { func
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lbc4fc9efd2b_scripts')) { function _lbc4fc9efd2b_scripts($_l, $_args) { extract($_args)
-?>        <script src="<?php echo htmlSpecialChars($basePath) ?>/lightbox/js/lightbox-2.6.min.js"></script>
+if (!function_exists($_l->blocks['scripts'][] = '_lb2c7dd7dc10_scripts')) { function _lb2c7dd7dc10_scripts($_l, $_args) { extract($_args)
+?><script src="<?php echo htmlSpecialChars($basePath) ?>/lightbox/js/lightbox-2.6.min.js"></script>
 <?php
 }}
 

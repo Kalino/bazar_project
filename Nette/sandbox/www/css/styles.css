@@ -100,6 +100,12 @@ select{
     font-size: 15px;
 }
 
+.flash{
+    color: red;
+    font-size: 16px;
+    margin-left: 15px;
+}
+
 input[type="submit"]{
     width: 100px;
     height: 30px;
@@ -345,9 +351,42 @@ th{
     border: white solid 5px;
 }
 
+.car_info .btn_remove{
+    margin: 4px;
+    padding: 4px;
+    font-size: 14px;
+    font-style: italic;
+    float: left;   
+    background-color: #dcdcdc;
+    border: #000000 solid thin;
+    color: black;
+}
+
+.car_info .btn_remove:hover{
+    background-color: #C03333;
+}
+
+#car_data .btn_change{
+    margin: 4px;
+    padding: 4px;
+    font-size: 14px;
+    font-style: italic;
+    float: right;   
+    background-color: #dcdcdc;
+    border: #000000 solid thin;
+    color: black;
+}
+
+#car_data .btn_change:hover{
+    background-color: #C03333;
+}
+
+.car_info a{
+    color: black;
+}
 #add_form{
     display: block;
-    width: 90%;
+    width: 95%;
     min-height: 600px;
     background-image: url('../images/gradient2.png');
     background-repeat: repeat-x;
@@ -373,6 +412,21 @@ th{
     width: 220px;
 }
 
+#registration_form{
+    display: block;
+    width: 95%;
+    min-height: 300px;
+    background-image: url('../images/gradient2.png');
+    background-repeat: repeat-x;
+    border-radius: 10px;
+    box-shadow: inset 0 0 1px 1px rgb(220,220,220);
+    z-index: 1;
+    margin-left: 3%;
+}
+
+#registration_form form{
+    margin: 10px;
+}
 
 #car_data{
     float: left;
@@ -491,6 +545,11 @@ th{
     transition: background-color 300ms linear;
 }
 
+.reginfo{
+    font-size: 12px;
+    font-style: italic;
+}
+
 .center a{
     text-decoration: none;
     font-weight: 700;
@@ -567,6 +626,18 @@ th{
     text-align: left;
     height: 25px;
     padding: 2px;
+}
+
+#users td, th{
+    text-align: center;
+}
+
+#users a{
+    text-decoration: none;
+}
+
+#users a:hover{
+    color: #C03333;
 }
 
 footer hr{

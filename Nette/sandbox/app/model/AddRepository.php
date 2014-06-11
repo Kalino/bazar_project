@@ -40,4 +40,24 @@ INNER JOIN models m ON(b.ID = m.brand) ORDER BY b.name, m.model;");
     public function insertProperties($id, $car_id){
         $this->connection->query("INSERT INTO cars_properties (id_car, id_prop) VALUES(" . $car_id . "," . $id . ");");
     }
+    
+    public function getInzerat($id){
+       return  $this->connection->query("SELECT * FROM cars WHERE id = " . $id . ";")->fetch();
+    }
+    
+    public function getInzeratID($id){
+       return  $this->connection->query("SELECT id FROM cars WHERE id = " . $id . ";");
+    }
+    
+    public function getCarProperties($id){
+        return $this->connection->query("SELECT id_prop FROM cars_properties WHERE id_car = " . $id . ";")->fetchAll();
+    }
+    
+    public function updateBasicValues($id, $pole) {
+        $this->connection->table('cars')->where($id)->update($pole);
+    }
+    
+    public function removeProperties($id){
+        $this->connection->query("DELETE FROM cars_properties WHERE id_car = " . $id . ";");
+    }
 }

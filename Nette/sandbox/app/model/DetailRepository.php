@@ -37,5 +37,16 @@ class DetailRepository extends Repository {
                                          JOIN cars_properties ON properties.id=cars_properties.id_prop
                                           WHERE cars_properties.id_car=' . $id . ' AND properties.category=1;');
     }
+    
+    public function getExistingUser($name){
+        return $this->connection->query("SELECT id FROM users WHERE username='" . $name . "';");
+    }
+    
+    public function getExistingMail($mail){
+        return $this->connection->query("SELECT id FROM users WHERE email='" . $mail . "';");
+    }
 
+    public function insertUser($name, $password, $mail){
+        $this->connection->query("INSERT INTO users (username, password, role, email) VALUES ('" . $name . "', '" . $password . "', 'guest', '" . $mail . "');");
+    }
 }

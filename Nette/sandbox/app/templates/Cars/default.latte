@@ -4,24 +4,35 @@
 <div id="left_panel">
 
     {foreach $cars as $item}
-        <a href="{$basePath}/detail/show/{$item->id}" target="_blank">
-            <div class="car_info">
+        <div class="car_info">
+            <a href="{$basePath}/detail/show/{$item->id}" target="_blank">
                 <div class="car_info_title">{$znacky[$item->brand]} {$modely[$item->model]} {$item->name}
                     <div class="date">{$item->create_date|date:'%d.%m.%Y'}</div>
                 </div>
+            </a>
+            {if $user->isLoggedIn() && ($user->identity->id == $item->user || $user->identity->role === 'admin')}
+                <a href="{$basePath}"><div class="btn_remove" id="{$item->id}">Zmazať</div></a>
+            {/if}
+            <a href="{$basePath}/detail/show/{$item->id}" target="_blank">
                 <div class="car_info_image">
                     <img src="{$basePath}/images/cars/small/{$item->main_image}" alt="car_image">
                 </div>
-                <div class="car_info_content">
-                    
-                    {$stringy[$item->region]}&nbsp;kraj, r.v.: {$item->year}, Objem motora: {$item->capacity}, {$item->power}&nbsp;kW, {$stringy[$item->gas]}, 
-                    {$item->kilometres}&nbsp;km, {$stringy[$item->gear]}&nbsp;prevodovka
-                </div>
-                <span>Cena: {$item->price}&euro;</span>
+            </a>
+            <div class="car_info_content">
+
+                {$stringy[$item->region]}&nbsp;kraj, r.v.: {$item->year}, Objem motora: {$item->capacity}, {$item->power}&nbsp;kW, {$stringy[$item->gas]}, 
+                {$item->kilometres}&nbsp;km, {$stringy[$item->gear]}&nbsp;prevodovka
             </div>
-        </a>
+            <span>Cena: {$item->price}&euro;</span>
+        </div>
     {/foreach}
-    
+
+    {ifset $page['prev']}
+        <a href="{$basePath}/detail/show/{$page['prev']}">Predchdádzajúca stránka</a>
+    {/ifset}
+    {ifset $page['next']}
+        <a href="{$basePath}/detail/show/{$page['next']}">Nasledujúca stránka</a>
+    {/ifset}
 
 </div>
 

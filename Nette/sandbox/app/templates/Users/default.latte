@@ -1,0 +1,32 @@
+{* ZOZNAM UZIVATELOV  *}
+{block title} Užívatelia {/block}
+{block content}
+<div id="left_panel">
+    <div id="add_form">
+        <div class="top">
+            Užívatelia
+        </div>
+        <table id="users">
+            <tr>
+                <th>Nick</th>
+                <th>Počet inzerátov</th>
+            </tr>
+            {foreach $users as $item}
+                <tr>
+                    <td>
+                        <a href="{$basePath}/cars/user/{$item->id}">{$item->name}</a>
+                    </td>
+                    <td>
+                        {$item->pocet}
+                    </td>
+                </tr>
+            {/foreach}
+        </table>
+    </div>
+
+</div>
+
+<div id="right_panel">
+    {control topCars}
+</div>
+{/block}

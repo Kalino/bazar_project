@@ -55,7 +55,7 @@ class HomepagePresenter extends BasePresenter {
         foreach ($models as $model) {
             $modely = $modely . '<option value="' . $model->id . '">' . $model->model . '</option>';
         }
-
+        
         die($modely);
     }
     

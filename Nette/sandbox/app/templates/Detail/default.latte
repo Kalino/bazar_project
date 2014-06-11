@@ -8,6 +8,9 @@
     <h2>
         {$pole['brand']} {$pole['model']}
         {$pole['name']} 
+        {if $user->isLoggedIn() && ($user->identity->id == $pole['user'] || $user->identity->role === 'admin')}
+            <a href="{$basePath}/change/update/{$pole['id']}"><div class="btn_change">Upraviť</div></a>
+        {/if}
     </h2>
     <div class="date">{$pole['create']|date:'%d.%m.%Y'}</div>
     <hr>
@@ -53,5 +56,5 @@
 </div>
 {/block}
 {block scripts}
-        <script src="{$basePath}/lightbox/js/lightbox-2.6.min.js"></script>
+<script src="{$basePath}/lightbox/js/lightbox-2.6.min.js"></script>
 {/block}

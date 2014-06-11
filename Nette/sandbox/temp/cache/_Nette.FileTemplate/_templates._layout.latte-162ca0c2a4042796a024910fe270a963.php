@@ -1,44 +1,44 @@
-<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.74400700 1396795977";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte";i:2;i:1396795973;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.03836200 1402265601";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte";i:2;i:1402265599;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\wamp2\www\projekt\Nette\sandbox\app\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'dgks1i1vt5')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'u34ndqxlbt')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb1a6accd5c3_title')) { function _lb1a6accd5c3_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb49137e0e8f_title')) { function _lb49137e0e8f_title($_l, $_args) { extract($_args)
 ?>Domovská stránka<?php
 }}
 
 //
 // block links
 //
-if (!function_exists($_l->blocks['links'][] = '_lb8b210f865f_links')) { function _lb8b210f865f_links($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['links'][] = '_lb74a6f237b0_links')) { function _lb74a6f237b0_links($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lbc4cab4cada_head')) { function _lbc4cab4cada_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lba29abc8246_head')) { function _lba29abc8246_head($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb73162fd887_content')) { function _lb73162fd887_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbf80845facb_content')) { function _lbf80845facb_content($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb000a8b68e5_scripts')) { function _lb000a8b68e5_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lbddc230895f_scripts')) { function _lbddc230895f_scripts($_l, $_args) { extract($_args)
 ;
 }}
 
@@ -101,7 +101,10 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
 ">Moje inzeráty</a>
                         <a href="<?php echo htmlSpecialChars($_control->link("Add:default")) ?>
 ">Pridať inzerát</a>
-<?php endif ?>
+<?php if ($user->identity->role == 'admin'): ?>
+                            <a href="<?php echo htmlSpecialChars($_control->link("Users:default")) ?>
+">Users</a>
+<?php endif ;endif ?>
                     <a href="<?php echo htmlSpecialChars($_control->link("About:")) ?>
 ">About</a>
 <?php if ($user->isLoggedIn()): ?>
@@ -109,11 +112,13 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
                             Ste prihlásený ako <?php echo Nette\Templating\Helpers::escapeHtml($user->identity->username, ENT_NOQUOTES) ?>
 
                         </div>
-<?php endif ?>
+<?php endif ;$iterations = 0; foreach ($flashes as $flash): ?>
+                        <div class="flash"><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></div>
+<?php $iterations++; endforeach ?>
                     <div id="id_login">
                         <div id="login_top">Prihlásenie</div>
 <?php $_ctrl = $_control->getComponent("newLoginForm"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ?>
-                        <a id="id_link_registration" href="<?php echo htmlSpecialChars($_control->link("Homepage:default")) ?>
+                        <a id="id_link_registration" href="<?php echo htmlSpecialChars($_control->link("Registration:default")) ?>
 ">Registrácia</a>
                     </div>
                 </div>
@@ -138,7 +143,10 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
 ">Moje inzeráty</a>
                         <a href="<?php echo htmlSpecialChars($_control->link("Add:default")) ?>
 ">Pridať inzerát</a>
-<?php endif ?>
+<?php if ($user->identity->role == 'admin'): ?>
+                            <a href="<?php echo htmlSpecialChars($_control->link("Users:default")) ?>
+">Users</a>
+<?php endif ;endif ?>
                     <a href="<?php echo htmlSpecialChars($_control->link("About:")) ?>
 ">About</a>
                 </div>

@@ -32,6 +32,9 @@
                     {if $user->isLoggedIn()}
                         <a n:href="Cars:own">Moje inzeráty</a>
                         <a n:href="Add:default">Pridať inzerát</a>
+                        {if $user->identity->role == 'admin'} 
+                            <a n:href="Users:default">Users</a>
+                        {/if}
                     {/if}
                     <a n:href="About:">About</a>
                     {if $user->isLoggedIn()}
@@ -39,10 +42,13 @@
                             Ste prihlásený ako {$user->identity->username}
                         </div>
                     {/if}
+                    {foreach $flashes as $flash}
+                        <div class="flash">{$flash->message}</div>
+                    {/foreach}
                     <div id="id_login">
                         <div id="login_top">Prihlásenie</div>
                         {control newLoginForm}
-                        <a id="id_link_registration" n:href="Homepage:default">Registrácia</a>
+                        <a id="id_link_registration" n:href="Registration:default">Registrácia</a>
                     </div>
                 </div>
                 <div id="show_small_menu" onclick="ShowSmallMenu();">Menu</div>
@@ -65,6 +71,9 @@
                     {if $user->isLoggedIn()}
                         <a n:href="Cars:own">Moje inzeráty</a>
                         <a n:href="Add:default">Pridať inzerát</a>
+                        {if $user->identity->role == 'admin'} 
+                            <a n:href="Users:default">Users</a>
+                        {/if}
                     {/if}
                     <a n:href="About:">About</a>
                 </div>

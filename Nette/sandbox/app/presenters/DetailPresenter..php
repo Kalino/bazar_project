@@ -33,6 +33,8 @@ class DetailPresenter extends BasePresenter {
                 $pole['capacity'] = $item->capacity;
                 $pole['kilometres'] = $item->kilometres;
                 $pole['power'] = $item->power;
+                $pole['user'] = $item->user;
+                $pole['id'] = $item->id;
 
                 $poms = $this->detailRepository->getBrandName($item->brand);
                 foreach ($poms as $pom) {
